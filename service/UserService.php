@@ -7,6 +7,12 @@ class UserService extends DataService{
 	function __construct(){
 		parent::__construct();
 		$this->log = Factory::getLogger(); 
+		
+		//初始化memcache
+        //if(MEMCACHE_USABLE){
+        //    $this->mem_server = new Memcache();
+        //   $this->mem_server->addServer(MEMCACHE_SERVER, MEMCACHE_PORT);
+        //}
 	}
 	
 	function findUserList($page, $size){
